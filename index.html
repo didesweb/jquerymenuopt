@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<!-- Didesweb -->  
+<!-- Diseño y desarrollo web -->  
+<!-- http://didesweb.com/-->  
+<!-- Este obra está protegida bajo licencia Creative Commons Attribution --> 
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Didesweb, menú de opciones seleccionable con jQuery</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript"> 
+ $(document).ready(function(){ 
+	 $('#html5_cheat_seet div').not(':first').hide();
+	 $('#html5_cheat_seet ul li:first a').addClass('opcion_activa');
+	 $('#html5_cheat_seet a').click(function(){
+		 $('#html5_cheat_seet a').removeClass('opcion_activa');
+		 $(this).addClass('opcion_activa');
+		 $('#html5_cheat_seet div').fadeOut(0).filter(this.hash).fadeIn(0);
+		 return false;
+	 });
+ });
+</script>
+<style> 
+#html5_cheat_seet ul  {   
+ display: block; 
+}
+#html5_cheat_seet li {   
+ display: inline; 
+ padding: 10px; 
+ list-style: none; 
+}
+#html5_cheat_seet a {   
+ color: #888888;
+}
+#html5_cheat_seet a:hover  {   
+ color: #000000;
+}
+#html5_cheat_seet a.opcion_activa  {   
+ color: #0099CC; 
+}
+#html5_cheat_seet div  {   
+ padding: 20px; 
+}
+</style>
+</head>
+<body>
+	<h1>Didesweb, menú de opciones seleccionable con jQuery</h1>
+	<div id="html5_cheat_seet">
+	 <ul>
+		 <li><a href="#definicion">Definición</a></li>
+		 <li><a href="#atributos">Atributos</a></li>
+		 <li><a href="#valores">Valores</a></li>
+	 </ul>
+	<div id="definicion">
+	 Lorem ipsum dolor sit amet, consectetuer adipiscing elit ...
+	</div>
+	<div id="atributos">
+	 Aenean commodo ligula eget dolor. Aenean massa.Cum sociis ...
+	</div>
+	<div id="valores">
+	 Nulla consequat massa quis enim. Donec pede justo, fringilla ...
+	</div>
+	</div>
+</body>
+</html>
